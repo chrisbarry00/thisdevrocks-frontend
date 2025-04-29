@@ -1,10 +1,13 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axios from "axios";
 
 export interface Post {
   id: number;
   title: string;
+  slug: string;
   content: string;
+  tags?: string[];
+  created_at: string;
 }
 
 interface PostsState {
@@ -31,19 +34,19 @@ const handleFulfilled = (state: PostsState, action: PayloadAction<Post[]>) => {
 
 const handleRejected = (state: PostsState, action: any) => {
   state.loading = false;
-  state.error = action.error.message || 'Failed to fetch posts';
+  state.error = action.error.message || "Failed to fetch posts";
 };
 
 export const fetchPosts = createAsyncThunk<Post[]>(
-  'posts/fetchPosts',
+  "posts/fetchPosts",
   async () => {
-    const response = await axios.get('http://localhost:3000/api/posts');
+    const response = await axios.get("http://localhost:3000/api/posts");
     return response.data;
-  }
+  },
 );
 
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     setPosts: (state, action: PayloadAction<Post[]>) => {

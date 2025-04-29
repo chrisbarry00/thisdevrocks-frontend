@@ -1,5 +1,11 @@
 import React from "react";
 
-export default function Footer() {
-  return <div />;
-}
+const Footer = () => {
+  return (
+    <footer className="text-center text-gray-500 text-sm py-8">
+      thisdevrocks - building, learning, and ready for what's next.
+    </footer>
+  );
+};
+
+export default Footer;
