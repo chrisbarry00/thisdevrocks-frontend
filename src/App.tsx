@@ -1,26 +1,18 @@
-import React, { useEffect } from 'react';
-import './App.css';
-import { fetchPosts } from './features/posts/postsSlice';
-import { useAppDispatch, useAppSelector } from './app/hooks';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Blog from "./pages/Blog";
 
-function App() {
-  const dispatch = useAppDispatch();
-  const { posts } = useAppSelector(state => state.posts);
-
-  useEffect(() => {
-    dispatch(fetchPosts());
-  }, [dispatch]);
-
-  return (
-    <div>
-      <h1>Posts</h1>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+const App = () => (
+  <Layout>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/blog" element={<Blog />} />
+    </Routes>
+  </Layout>
+);
 
 export default App;

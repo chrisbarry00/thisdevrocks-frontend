@@ -37,7 +37,7 @@ const handleRejected = (state: PostsState, action: any) => {
 export const fetchPosts = createAsyncThunk<Post[]>(
   'posts/fetchPosts',
   async () => {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    const response = await axios.get('http://localhost:3000/api/posts');
     return response.data;
   }
 );
