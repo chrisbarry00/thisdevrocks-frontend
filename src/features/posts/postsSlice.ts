@@ -1,14 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
-
-export interface Post {
-  id: number;
-  title: string;
-  slug: string;
-  content: string;
-  tags?: string[];
-  created_at: string;
-}
+import { Post } from "../../types/Post";
 
 interface PostsState {
   posts: Post[];
@@ -37,10 +29,14 @@ const handleRejected = (state: PostsState, action: any) => {
   state.error = action.error.message || "Failed to fetch posts";
 };
 
-export const fetchPosts = createAsyncThunk<Post[]>(
+export const fetchPosts = createAsyncThunk<Post[], number | undefined>(
   "posts/fetchPosts",
-  async () => {
-    const response = await axios.get("http://localhost:3000/api/posts");
+  async (limit) => {
+    const response = await axios.get("http://localhost:3000/api/posts", {
+      params: {
+        limit,
+      },
+    });
     return response.data;
   },
 );
