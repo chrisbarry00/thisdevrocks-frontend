@@ -35,7 +35,7 @@ const TagView = () => {
 
   return (
     <div className="grid gap-6 p-4 md:p-8">
-      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#3b82f6]">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-[#5C96FE]">
         Posts tagged with "{tag}"
       </h2>
       <div className="grid gap-6 p-4 md:p-8">

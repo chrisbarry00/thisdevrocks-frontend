@@ -11,10 +11,10 @@ const PostCard = ({ post }: PostCardProps) => {
 
   return (
     <article
-      className="bg-[#161618] border border-[#2a2a2d] rounded-2xl p-6 shadow-sm hover:border-[#3b82f6] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+      className="bg-[#161618] border border-[#2a2a2d] rounded-2xl p-6 shadow-sm hover:border-[#5C96FE] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
       onClick={() => navigate(`/posts/${post.slug}`)}
     >
-      <h3 className="text-2xl font-semibold text-[#3b82f6] mb-2 group-hover:text-[#60a5fa] transition">
+      <h3 className="text-2xl font-semibold text-[#5C96FE] mb-2 group-hover:text-[#60a5fa] transition">
         {post.title}
       </h3>
       <p className="text-base text-gray-400 leading-relaxed">
@@ -30,7 +30,7 @@ const PostCard = ({ post }: PostCardProps) => {
                 e.stopPropagation();
                 navigate(`/tags/${tag}`);
               }}
-              className="bg-[#2a2a2d] text-gray-400 text-xs px-3 py-1 rounded-full font-medium cursor-pointer hover:bg-[#3b82f6] hover:text-white transition"
+              className="bg-[#2a2a2d] text-gray-400 text-xs px-3 py-1 rounded-full font-medium cursor-pointer hover:bg-[#5C96FE] hover:text-white transition"
             >
               {tag}
             </span>

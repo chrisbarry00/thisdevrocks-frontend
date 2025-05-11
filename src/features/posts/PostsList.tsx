@@ -38,7 +38,7 @@ const PostsList: React.FC<PostsListProps> = ({ limit }) => {
   }
 
   return (
-    <div className="grid gap-6 p-4 md:p-8">
+    <div className="space-y-4">
       {posts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}

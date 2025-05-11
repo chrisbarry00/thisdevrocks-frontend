@@ -33,7 +33,7 @@ const PostView = () => {
 
   return (
     <div className="p-8 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-4 text-[#3b82f6]">{post.title}</h1>
+      <h1 className="text-4xl font-bold mb-4 text-[#5C96FE]">{post.title}</h1>
       <p className="text-gray-400 mb-4 italic">
         {new Date(post.created_at).toLocaleDateString()}
       </p>
@@ -45,7 +45,7 @@ const PostView = () => {
             <span
               key={tag}
               onClick={() => navigate(`/tags/${tag}`)}
-              className="bg-[#2a2a2d] text-gray-400 text-xs px-3 py-1 rounded-full font-medium cursor-pointer hover:bg-[#3b82f6] hover:text-white transition"
+              className="bg-[#2a2a2d] text-gray-400 text-xs px-3 py-1 rounded-full font-medium cursor-pointer hover:bg-[#5C96FE] hover:text-white transition"
             >
               {tag}
             </span>
