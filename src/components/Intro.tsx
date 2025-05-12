@@ -11,7 +11,7 @@ const Intro = () => (
     </p>
     <div className="mt-6 flex justify-center space-x-6">
       <Link
-        to="/blog"
+        to="/projects"
         className="bg-[#3b82f6] hover:bg-[#60a5fa] text-white px-6 py-3 rounded-md text-lg transition"
       >
         View My Work

@@ -8,21 +8,19 @@ const Footer = () => {
         <a
           href="https://github.com/chrisbarry00"
           target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-500 hover:text-[#5C96FE] transition group"
+          className="text-gray-500 hover:text-[#5C96FE] transition group" rel="noreferrer"
         >
           <div className="relative group">
-            <FaGithub className="text-3xl transition-transform duration-300 transform group-hover:-translate-y-2 hover:drop-shadow-[0_4px_10px_rgba(92,150,254,0.5)]" />
+            <FaGithub className="text-4xl transition-transform duration-300 transform group-hover:-translate-y-2 hover:drop-shadow-[0_4px_10px_rgba(92,150,254,0.5)]" />
           </div>
         </a>
         <a
           href="https://linkedin.com/in/christopher-shaun-barry"
           target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-500 hover:text-[#5C96FE] transition group"
+          className="text-gray-500 hover:text-[#5C96FE] transition group" rel="noreferrer"
         >
           <div className="relative group">
-            <FaLinkedin className="text-3xl transition-transform duration-300 transform group-hover:-translate-y-2 hover:drop-shadow-[0_4px_10px_rgba(92,150,254,0.5)]" />
+            <FaLinkedin className="text-4xl transition-transform duration-300 transform group-hover:-translate-y-2 hover:drop-shadow-[0_4px_10px_rgba(92,150,254,0.5)]" />
           </div>
         </a>
       </div>

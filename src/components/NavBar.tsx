@@ -1,24 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import NavItem from "./NavItem";
 
 const NavBar = () => {
   return (
-    <nav className="hidden md:flex space-x-8 text-base">
-      <Link to="/" className="hover:underline hover:text-[#5C96FE] transition">
-        Home
-      </Link>
-      <Link
-        to="/about"
-        className="hover:underline hover:text-[#5C96FE] transition"
-      >
-        About
-      </Link>
-      <Link
-        to="/blog"
-        className="hover:underline hover:text-[#5C96FE] transition"
-      >
-        Blog
-      </Link>
+    <nav className="flex space-x-6 text-lg">
+      <NavItem to="/" label="Home" />
+      <NavItem to="/about" label="About" />
+      <NavItem to="/projects" label="Projects" />
+      <NavItem to="/blog" label="Blog" />
     </nav>
   );
 };

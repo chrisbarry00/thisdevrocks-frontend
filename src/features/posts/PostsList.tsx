@@ -17,9 +17,7 @@ const PostsList: React.FC<PostsListProps> = ({ limit }) => {
     dispatch(fetchPosts(limit));
   }, [dispatch, limit]);
 
-  if (loading) {
-    return <Loader />;
-  }
+  if (loading) return <Loader />;
 
   if (error) {
     return (
