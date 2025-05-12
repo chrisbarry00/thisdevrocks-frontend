@@ -12,13 +12,13 @@ const Intro = () => (
     <div className="mt-6 flex justify-center space-x-6">
       <Link
         to="/projects"
-        className="bg-[#3b82f6] hover:bg-[#60a5fa] text-white px-6 py-3 rounded-md text-lg transition"
+        className="bg-primaryAccent hover:bg-primaryAccentHover text-white px-6 py-3 rounded-md text-lg transition"
       >
         View My Work
       </Link>
       <Link
         to="/about"
-        className="bg-[#1f1f23] border border-[#5C96FE] hover:bg-[#5C96FE] text-white px-6 py-3 rounded-md text-lg transition"
+        className="bg-surfaceBackground border border-primaryAccent hover:bg-primaryAccent text-white px-6 py-3 rounded-md text-lg transition"
       >
         About Me
       </Link>

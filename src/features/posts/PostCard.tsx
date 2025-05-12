@@ -8,21 +8,25 @@ interface PostCardProps {
 
 const PostCard = ({ post }: PostCardProps) => {
   const navigate = useNavigate();
+  const previewContent =
+    post.content.length > 150
+      ? `${post.content.slice(0, 150)}...`
+      : post.content;
 
   return (
     <article
-      className="bg-[#161618] border border-[#2a2a2d] rounded-2xl p-6 shadow-sm hover:border-[#5C96FE] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+      className="bg-cardBackground border border-borderPrimary rounded-2xl p-6 shadow-sm hover:border-primaryAccent hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
       onClick={() => navigate(`/posts/${post.slug}`)}
     >
-      <h3 className="text-2xl font-semibold text-[#5C96FE] mb-2 group-hover:text-[#60a5fa] transition">
+      <h3 className="text-2xl font-semibold text-primaryAccent mb-2 group-hover:text-hoverTextAccent transition">
         {post.title}
       </h3>
-      <p className="text-base text-gray-400 leading-relaxed">
-        {post.content.slice(0, 150)}...
+      <p className="text-base text-textSecondary leading-relaxed">
+        {previewContent}
       </p>
 
       {post.tags?.length && (
-        <div className="flex flex-wrap gap-2 mt-4">
+        <section className="flex flex-wrap gap-2 mt-4">
           {post.tags.map((tag) => (
             <span
               key={tag}
@@ -30,12 +34,12 @@ const PostCard = ({ post }: PostCardProps) => {
                 e.stopPropagation();
                 navigate(`/tags/${tag}`);
               }}
-              className="bg-[#2a2a2d] text-gray-400 text-xs px-3 py-1 rounded-full font-medium cursor-pointer hover:bg-[#5C96FE] hover:text-white transition"
+              className="bg-borderPrimary text-textSecondary text-xs px-3 py-1 rounded-full font-medium cursor-pointer hover:bg-primaryAccent hover:text-white transition"
             >
               {tag}
             </span>
           ))}
-        </div>
+        </section>
       )}
     </article>
   );

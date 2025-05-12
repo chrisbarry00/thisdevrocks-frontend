@@ -16,7 +16,7 @@ import Tooltip from "./Tooltip";
 const Skills = () => (
   <section id="skills" className="space-y-6">
     <h2 className="text-5xl font-semibold text-white text-center">My Skills</h2>
-    <div className="grid grid-cols-3 md:grid-cols-6 gap-3 text-gray-500 justify-items-center">
+    <div className="grid grid-cols-3 md:grid-cols-6 gap-3 text-textTertiary justify-items-center">
       {[
         { Component: FaReact, label: "React" },
         { Component: SiRedux, label: "Redux" },
@@ -33,7 +33,7 @@ const Skills = () => (
       ].map(({ Component, label }, index) => (
         <Tooltip text={label} key={index}>
           <div className="relative group">
-            <Component className="text-4xl transition-transform duration-300 transform group-hover:-translate-y-2 hover:text-[#5C96FE] hover:drop-shadow-[0_4px_10px_rgba(92,150,254,0.5)]" />
+            <Component className="text-4xl transition-transform duration-300 transform group-hover:-translate-y-2 hover:text-primaryAccent hover:drop-shadow-[0_4px_10px_rgba(92,150,254,0.5)]" />
           </div>
         </Tooltip>
       ))}

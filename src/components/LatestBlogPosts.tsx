@@ -1,7 +1,7 @@
 import PostsList from "../features/posts/PostsList";
-import { Link } from "react-router-dom";
 import React from "react";
 import { useAppSelector } from "../app/hooks";
+import AnimatedLink from "./AnimatedLink";
 
 const LatestBlogPosts = () => {
   const { posts } = useAppSelector((state) => state.posts);
@@ -12,13 +12,7 @@ const LatestBlogPosts = () => {
       <PostsList limit={3} />
       {posts.length >= 3 && (
         <div className="flex justify-end mt-4">
-          <Link
-            to="/blog"
-            className="relative text-[#5C96FE] hover:text-[#60a5fa] transition text-lg group"
-          >
-            View More →
-            <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#5C96FE] transition-all duration-300 group-hover:w-full"></span>
-          </Link>
+          <AnimatedLink to="/blog" label="View More →" />
         </div>
       )}
     </section>

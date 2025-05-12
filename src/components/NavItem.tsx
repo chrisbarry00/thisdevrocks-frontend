@@ -12,13 +12,13 @@ const NavItem: React.FC<NavItemProps> = ({ to, label }) => {
       to={to}
       className={({ isActive }) =>
         isActive
-          ? "relative text-[#5C96FE] pb-1 transition group"
-          : "relative text-gray-300 hover:text-[#5C96FE] transition group"
+          ? "relative text-primaryAccent pb-1 transition group"
+          : "relative text-textPrimary hover:text-hoverTextAccent transition group"
       }
     >
       {label}
       <span
-        className="absolute left-0 -bottom-[2px] w-0 h-[2px] bg-[#5C96FE]
+        className="absolute left-0 -bottom-[2px] w-0 h-[2px] bg-hoverTextAccent
                    transition-all duration-300 group-hover:w-full group-focus:w-full"
       />
     </NavLink>

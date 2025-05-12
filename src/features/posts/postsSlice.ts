@@ -16,6 +16,17 @@ const initialState: PostsState = {
   error: null,
 };
 
+const API_URL = process.env.REACT_APP_API_URL;
+const API_TOKEN = process.env.REACT_APP_API_TOKEN;
+
+/**
+ * Get headers for API requests, centralized for easier maintenance.
+ */
+const getHeaders = () => ({
+  Authorization: `Bearer ${API_TOKEN}`,
+  "Content-Type": "application/json",
+});
+
 const handlePending = (state: PostsState) => {
   state.loading = true;
   state.error = null;
@@ -42,22 +53,30 @@ const handleRejected = (state: PostsState, action: any) => {
   state.error = action.error.message || "Failed to fetch posts";
 };
 
+/**
+ * Fetch all posts with optional limit
+ */
 export const fetchPosts = createAsyncThunk<Post[], number | undefined>(
   "posts/fetchPosts",
   async (limit) => {
-    const response = await axios.get("http://localhost:3000/api/posts", {
+    const response = await axios.get(`${API_URL}/posts`, {
       params: { limit },
+      headers: getHeaders(),
     });
     return response.data;
   },
 );
 
+/**
+ * Fetch posts filtered by a specific tag
+ */
 export const fetchPostsByTag = createAsyncThunk<Post[], string>(
   "posts/fetchPostsByTag",
   async (tag, { rejectWithValue }) => {
     try {
-      const response = await axios.get("http://localhost:3000/api/posts", {
+      const response = await axios.get(`${API_URL}/posts`, {
         params: { tag },
+        headers: getHeaders(),
       });
       return response.data;
     } catch (error: any) {
@@ -66,10 +85,15 @@ export const fetchPostsByTag = createAsyncThunk<Post[], string>(
   },
 );
 
+/**
+ * Fetch a single post by its slug
+ */
 export const fetchPostBySlug = createAsyncThunk<Post, string>(
   "posts/fetchPostBySlug",
   async (slug) => {
-    const response = await axios.get(`http://localhost:3000/api/posts/${slug}`);
+    const response = await axios.get(`${API_URL}/posts/${slug}`, {
+      headers: getHeaders(),
+    });
     return response.data;
   },
 );

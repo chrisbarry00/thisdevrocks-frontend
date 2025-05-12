@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import "../../App.css";
 import { fetchPosts } from "./postsSlice";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import PostCard from "./PostCard";
 import Loader from "../../components/Loader";
+import ErrorMessage from "../../components/ErrorMessage";
+import NoResults from "../../components/NoResults";
 
 type PostsListProps = {
   limit?: number;
@@ -18,29 +19,15 @@ const PostsList: React.FC<PostsListProps> = ({ limit }) => {
   }, [dispatch, limit]);
 
   if (loading) return <Loader />;
-
-  if (error) {
-    return (
-      <div className="text-red-400 text-center">
-        <p>Something went wrong. Please try again later.</p>
-      </div>
-    );
-  }
-
-  if (!posts.length) {
-    return (
-      <div className="text-gray-400 text-center">
-        <p>No posts found.</p>
-      </div>
-    );
-  }
+  if (error) return <ErrorMessage />;
+  if (!posts.length) return <NoResults message="No posts found." />;
 
   return (
-    <div className="space-y-4">
+    <section className="space-y-4">
       {posts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
-    </div>
+    </section>
   );
 };
 

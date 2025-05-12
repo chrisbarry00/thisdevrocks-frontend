@@ -2,8 +2,8 @@ import { Project } from "../../types/Project";
 
 export const projects: Project[] = [
   {
-    id: "thisdevrocks",
-    name: "thisdevrocks",
+    id: "thisdev.rocks",
+    name: "thisdev.rocks",
     description: "Personal website & blog",
     links: [{ label: "You are here!", url: "/" }],
   },
