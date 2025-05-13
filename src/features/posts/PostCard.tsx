@@ -15,7 +15,7 @@ const PostCard = ({ post }: PostCardProps) => {
 
   return (
     <article
-      className="bg-cardBackground border border-borderPrimary rounded-2xl p-6 shadow-sm hover:border-primaryAccent hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
+      className="bg-cardBackground border border-borderPrimary rounded-xl p-4 md:p-6 shadow-sm hover:border-primaryAccent hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
       onClick={() => navigate(`/posts/${post.slug}`)}
     >
       <h3 className="text-2xl font-semibold text-primaryAccent mb-2 group-hover:text-hoverTextAccent transition">
@@ -25,8 +25,8 @@ const PostCard = ({ post }: PostCardProps) => {
         {previewContent}
       </p>
 
-      {post.tags?.length && (
-        <section className="flex flex-wrap gap-2 mt-4">
+      {post.tags?.length ? (
+        <section className="flex flex-wrap gap-1.5 mt-2 md:mt-4">
           {post.tags.map((tag) => (
             <span
               key={tag}
@@ -34,13 +34,13 @@ const PostCard = ({ post }: PostCardProps) => {
                 e.stopPropagation();
                 navigate(`/tags/${tag}`);
               }}
-              className="bg-borderPrimary text-textSecondary text-xs px-3 py-1 rounded-full font-medium cursor-pointer hover:bg-primaryAccent hover:text-white transition"
+              className="bg-borderPrimary text-textSecondary text-xs px-2.5 py-1 rounded-full font-medium cursor-pointer hover:bg-primaryAccent hover:text-white transition"
             >
               {tag}
             </span>
           ))}
         </section>
-      )}
+      ) : null}
     </article>
   );
 };

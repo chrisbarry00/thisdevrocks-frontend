@@ -24,9 +24,11 @@ const PostView = () => {
   if (!post) return <NoResults message="No post found." />;
 
   return (
-    <section className="p-8 max-w-4xl mx-auto">
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-4xl font-bold text-primaryAccent">{post.title}</h1>
+    <section className="p-6 md:p-8 max-w-4xl mx-auto">
+      <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-4 space-y-2 md:space-y-0">
+        <h1 className="text-3xl md:text-4xl font-bold text-primaryAccent">
+          {post.title}
+        </h1>
         <AnimatedLink to="/blog" label="← Back to All Blog Posts" />
       </div>
       <p className="text-textSecondary mb-4 italic">

@@ -26,7 +26,7 @@ const TagView = () => {
 
   return (
     <section className="grid gap-6 p-4 md:p-8">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center mb-4 space-y-2 md:space-y-0">
         <h2 className="text-2xl md:text-3xl font-bold text-primaryAccent">
           Posts tagged with "{tag}"
         </h2>

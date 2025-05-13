@@ -52,6 +52,13 @@ const MobileMenu = () => {
               About
             </Link>
             <Link
+              to="/projects"
+              className="hover:text-primaryAccent transition"
+              onClick={toggleMenu}
+            >
+              Projects
+            </Link>
+            <Link
               to="/blog"
               className="hover:text-primaryAccent transition"
               onClick={toggleMenu}
