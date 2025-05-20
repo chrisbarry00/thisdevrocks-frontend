@@ -24,7 +24,7 @@ export const projects: Project[] = [
     name: "GitHub Repos",
     description: "A collection of projects I've worked on",
     links: [
-      { label: "GitHub Profile", url: "https://github.com/chrisbarry00" },
+      { label: "GitHub Profile", url: "https://github.com/chrisbarryrocks" },
     ],
   },
 ];

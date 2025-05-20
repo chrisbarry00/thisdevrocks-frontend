@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="text-center text-textTertiary text-sm py-4 space-y-4">
       <div className="flex justify-center space-x-6">
         <a
-          href="https://github.com/chrisbarry00"
+          href="https://github.com/chrisbarryrocks"
           target="_blank"
           rel="noreferrer"
           className="text-textTertiary hover:text-primaryAccent transition group"
