@@ -8,6 +8,12 @@ export const projects: Project[] = [
     links: [{ label: "You are here!", url: "/" }],
   },
   {
+    id: "thunderfunk",
+    name: "Thunder Funk",
+    description: "Weather-driven Vibes",
+    links: [{ label: "Visit", url: "https://thunderfunk.thisdev.rocks" }],
+  },
+  {
     id: "mfc",
     name: "Mr. Fun Computer",
     description: "Roblox game",
