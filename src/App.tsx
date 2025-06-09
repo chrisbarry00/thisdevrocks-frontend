@@ -8,6 +8,7 @@ import PostView from "./features/posts/PostView";
 import TagView from "./features/TagView";
 import Projects from "./pages/Projects";
 import NotFound from "./pages/NotFound";
+import NewPost from "./pages/NewPost";
 
 const App = () => (
   <Layout>
@@ -15,6 +16,7 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/posts/new" element={<NewPost />} />
       <Route path="/posts/:slug" element={<PostView />} />
       <Route path="/tags/:tag" element={<TagView />} />
       <Route path="/projects" element={<Projects />} />

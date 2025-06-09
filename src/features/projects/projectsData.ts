@@ -14,6 +14,12 @@ export const projects: Project[] = [
     links: [{ label: "Visit", url: "https://thunderfunk.thisdev.rocks" }],
   },
   {
+    id: "moodstack",
+    name: "MoodStack",
+    description: "NPC Mood Management",
+    links: [{ label: "Visit", url: "https://moodstack.thisdev.rocks" }],
+  },
+  {
     id: "mfc",
     name: "Mr. Fun Computer",
     description: "Roblox game",

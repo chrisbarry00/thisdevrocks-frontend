@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import Loader from "../../components/Loader";
 import { fetchPostBySlug } from "./postsSlice";
@@ -35,7 +36,9 @@ const PostView = () => {
         {new Date(post.created_at).toLocaleDateString()}
       </p>
       <div className="text-textPrimary leading-relaxed mb-8">
-        {post.content}
+        <div className="prose prose-invert max-w-none">
+          <ReactMarkdown>{post.content}</ReactMarkdown>
+        </div>
       </div>
 
       {post.tags?.length ? (
